@@ -1,25 +1,25 @@
 package com.database;
 
-
 import com.json2Java.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.sql.*;
 
 public class DatabaseConnection {
-    Credentials cred = new Credentials();
 
-    public void getCred(getUser, getPass){
-        username = getUser;
-        password = getPass;
+
+    public void getCred(String user, String pass){
+        String username = user;
+        String password = pass;
 
         System.out.println("username: " + username);
         System.out.println("password: " + password);
     }
 
-    public void getConnection () {
-        Credentials cred = new Credentials(String user, String pass);
+    public void getConnection(String username, String password) {
+        Credentials cred = new Credentials(username, password);
         try (Connection ACCconn = DriverManager.getConnection("jdbc:derby://localhost:1527/myDataBase", username, password)) {
             //Statement stmt = ACCconn.createStatement();
             //ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM table1");
@@ -29,15 +29,15 @@ public class DatabaseConnection {
                 float f = rs.getFloat("c");
             } */
 
-            System.out.println("User: " + cred.user + " Pass" + cred.pass);
+           System.out.println("User: " + username + " Pass" + password);
             System.out.println("DB Connection is: " + ACCconn);
-            close(ACCConn);
 
         }  catch (SQLException sqle) {
             System.out.println("Error is: " + sqle.getErrorCode());
             System.out.println("SQL State: " + sqle.getSQLState());
             System.out.println("Errormessage: " + sqle.getMessage());
         }
+        close(ACCConn);
     }
 
     public static void Main (String[] args){
