@@ -17,7 +17,7 @@ public class Credentials {
             this.pass = pass;
         }
 
-    protected String setCred(setUser, setPass){
+    protected String setCred(String user, String pass){
         user = "admin";
         pass = "admin";
         return user,pass;
