@@ -1,5 +1,3 @@
-package com.database;
-
 public class Credentials {
         private final String user = "";
         private final String pass = "";
