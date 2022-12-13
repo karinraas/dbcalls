@@ -1,0 +1,6 @@
+dbcalls\Credentials.java:20: error: <identifier> expected
+    protected String setCred(setUser, setPass){
+                                    ^
+dbcalls\Credentials.java:20: error: <identifier> expected
+    protected String setCred(setUser, setPass){
+
