@@ -20,7 +20,7 @@ public class DatabaseConnection {
 
     public void getConnection () {
         Credentials cred = new Credentials(user, pass);
-        try (Connection ACCconn = DriverManager.getConnection("dbaddress.se", username, password)) {
+        try (Connection ACCconn = DriverManager.getConnection("jdbc:derby://localhost:1527/myDataBase", username, password)) {
             //Statement stmt = ACCconn.createStatement();
             //ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM table1");
            /* while (rs.next()) {
